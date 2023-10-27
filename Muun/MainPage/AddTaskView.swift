@@ -26,35 +26,39 @@ struct AddTaskView: View {
     
     var body: some View {
         List(chunked(allTaskTypes, by: 4), id: \.self) { chunk in
-            HStack(spacing: 30) {
+            HStack(spacing: -10) {
                 ForEach(chunk, id: \.self) { taskType in
-                    ZStack {
-                        Circle()
-                            .fill(taskType.color)
-                            .frame(width: 60, height: 60)
-
-                        VStack {
-                            taskType.image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 35)
-                                .padding(.top, 35)
-                            Text(taskTypeName(taskType: taskType))
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                                .padding(.top,10)
+                    Button(action: {
+                        
+                    }) {
+                        ZStack {
+                            Circle()
+                                .fill(taskType.color)
+                                .frame(width: 60, height: 60)
+                            
+                            VStack {
+                                taskType.image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 35, height: 35)
+                                    .padding(.top, 35)
+                                Text(taskTypeName(taskType: taskType))
+                                    .frame(width: 100)
+                                    .font(.caption)
+                                    .foregroundColor(.gray)
+                                    .padding(.top,10)
+                            }
                         }
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
-              
             }
             .frame(maxWidth:.infinity)
-            .listRowBackground(Color.colorFondo2)
-      
             .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+            
         }
-       
-       
+        .background(Color.colorFondo2)
     }
 
     func chunked<T>(_ array: [T], by size: Int) -> [[T]] {

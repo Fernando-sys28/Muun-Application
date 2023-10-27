@@ -7,171 +7,168 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SignInView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isPasswordVisible: Bool = false
     
     var body: some View {
-        ZStack{
-            BackGround()
-            
-            VStack{
-                Image("LogoMuun")
-                    .resizable()
-                    .frame(width: 300, height: 160)
-                    .padding(.bottom,-20)
-                VStack(alignment: .leading, spacing: 25){
-                    Text("¡Hola de nuevo!")
-                        .font(
-                            .title
-                        )
-                        .fontWeight(.semibold)
-                        .padding(.top,30)
-                        .padding(.horizontal,15)
-                    
-                    Text("Sign In para continuar")
-                        .font(.callout)
-                        .fontWeight(.light)
-                        .foregroundColor(.black)
-                        .padding(.horizontal,15)
-                        .padding(.top,-10)
-                    
-                    TextField("Usuario", text: $username)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 5)
+        NavigationView{
+            ZStack{
+                BackGround()
+                
+                VStack{
+                    Image("LogoMuun")
+                        .resizable()
+                        .frame(width: 300, height: 160)
+                        .padding(.bottom,-20)
+                    VStack(alignment: .leading, spacing: 25){
+                        Text("¡Hola de nuevo!")
+                            .font(
+                                .title
+                            )
+                            .fontWeight(.semibold)
+                            .padding(.top,30)
+                            .padding(.horizontal,15)
+                        
+                        Text("Sign In para continuar")
+                            .font(.callout)
+                            .fontWeight(.light)
+                            .foregroundColor(.black)
+                            .padding(.horizontal,15)
+                            .padding(.top,-10)
+                        
+                        TextField("Usuario", text: $username)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
+                            .overlay(
+                                Divider()
+                                    .padding(.horizontal,10), alignment: .bottom
+                            )
+                            .padding(.horizontal, 10)
+                            .padding(.bottom,10)
+                        HStack {
+                            if isPasswordVisible {
+                                TextField("Contraseña", text: $password)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                            } else {
+                                SecureField("Contraseña", text: $password)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                            }
+                            
+                            Button(action: {
+                                self.isPasswordVisible.toggle()
+                            }) {
+                                Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
+                                    .foregroundColor(.gray)
+                                    .padding(.horizontal)
+                            }
+                        }
                         .overlay(
                             Divider()
                                 .padding(.horizontal,10), alignment: .bottom
                         )
                         .padding(.horizontal, 10)
                         .padding(.bottom,10)
-                    HStack {
-                        if isPasswordVisible {
-                            TextField("Contraseña", text: $password)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 5)
-                        } else {
-                            SecureField("Contraseña", text: $password)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 5)
-                        }
                         
-                        Button(action: {
-                            self.isPasswordVisible.toggle()
-                        }) {
-                            Image(systemName: isPasswordVisible ? "eye.slash" : "eye")
-                                .foregroundColor(.gray)
-                                .padding(.horizontal)
-                        }
-                    }
-                    .overlay(
-                        Divider()
-                            .padding(.horizontal,10), alignment: .bottom
-                    )
-                    .padding(.horizontal, 10)
-                    .padding(.bottom,10)
-                    
-                    VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
-                        Button(action: {
-                            // Acción del botón de inicio de sesión
-                        }) {
-                            Text("Log In")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .multilineTextAlignment(.center)
-                                .padding()
-                                .frame(width: 250)
-                                .background(Color("AzulBoton"))
-                                .cornerRadius(60)
-                                .shadow(radius: 1.5)
-                        }
-                        .padding(.horizontal)
-                        
-                        Button(action: {
-                            // Acción para "Olvidó contraseña"
-                        }) {
-                            Text("¿Olvido contraseña?")
-                                .font(.subheadline)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.bottom,25)
-                        
-                        Text("O ingresa con")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                        
-                        HStack(spacing: 30) {
-                            Button(action: {
-                                // Acción para Google
-                            }) {
-                                Image("GoogleLogo") // Asegúrate de tener este asset
-                                    .resizable()
-                                    .frame(width: 28, height: 28)
+                        VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
+                            NavigationLink(destination: ToolbarView()){
+                                Text("Log In")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                                    .frame(width: 250)
+                                    .background(Color("AzulBoton"))
+                                    .cornerRadius(60)
+                                    .shadow(radius: 1.5)
                             }
-                            .frame(width: 60,height: 40)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color("AzulBoton"), lineWidth: 0.5)
-                            )
-                            Button(action: {
-                                // Acción para Facebook
-                            }) {
-                                Image("FacebookLogo") // Asegúrate de tener este asset
-                                    .resizable()
-                                    .frame(width: 35, height: 35)
-                            }
-                            .frame(width: 60,height: 40)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.orange, lineWidth: 0.5)
-                            )
+                            .padding(.horizontal)
                             
                             Button(action: {
-                                // Acción para Apple
+                                
                             }) {
-                                Image("AppleLogo")
-                                    .resizable()
-                                    .frame(width: 28, height: 28)
-                                    
+                                Text("¿Olvido contraseña?")
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.gray)
                             }
-                            .frame(width: 60,height: 40)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.yellow, lineWidth: 0.5)
-                            )
+                            .padding(.bottom,25)
+                            
+                            Text("O ingresa con")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            
+                            HStack(spacing: 30) {
+                                Button(action: {
+                                }) {
+                                    Image("GoogleLogo")
+                                        .resizable()
+                                        .frame(width: 28, height: 28)
+                                }
+                                .frame(width: 60,height: 40)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color("AzulBoton"), lineWidth: 0.5)
+                                )
+                                Button(action: {
+                                }) {
+                                    Image("FacebookLogo")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                }
+                                .frame(width: 60,height: 40)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.orange, lineWidth: 0.5)
+                                )
+                                
+                                Button(action: {
+                                }) {
+                                    Image("AppleLogo")
+                                        .resizable()
+                                        .frame(width: 28, height: 28)
+                                        
+                                }
+                                .frame(width: 60,height: 40)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.yellow, lineWidth: 0.5)
+                                )
+                            }
+                            .padding(.bottom,20)
+                            
+                            NavigationLink(destination:RegisterView()){
+                                Text("¿No tiene cuenta? ¡Únete!")
+                                    .font(.body)
+                                    .fontWeight(.light)
+                                    .foregroundColor(.black)
+                            }
+                            
                         }
-                        .padding(.bottom,20)
-                        Button(action: {
-                            // Acción para "¡Únete!"
-                        }) {
-                            Text("¿No tiene cuenta? ¡Únete!")
-                                .font(.body)
-                                .fontWeight(.light)
-                                .foregroundColor(.black)
-                        }
+                        .padding(.horizontal,25)
+                        Spacer()
                     }
-                    .padding(.horizontal,25)
+                    .padding()
+                    .frame(width: 350, height: 580)
+                    .background(Color(.white))
+                    .cornerRadius(40)
+                    .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 10)
                     
-                    Spacer()
                 }
-                .padding()
-                .frame(width: 350, height: 580)
-                .background(Color(.white))
-                .cornerRadius(40)
-                .shadow(color: Color.black.opacity(0.1), radius: 15, x: 0, y: 10)
-                
+                .padding(.top,-80)
             }
-            .padding(.top,-80)
         }
+        .navigationBarHidden(true)
     }
 }
 
 
 #Preview {
-    ContentView()
+    SignInView()
 }
 
 struct Vector: Shape {

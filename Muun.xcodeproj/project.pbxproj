@@ -7,18 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA01FCFF2AEB8CED00E0C2C6 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01FCFE2AEB8CED00E0C2C6 /* ChatView.swift */; };
 		BA51E40F2AD8DE8B00BBB788 /* MuunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E40E2AD8DE8B00BBB788 /* MuunApp.swift */; };
-		BA51E4112AD8DE8B00BBB788 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4102AD8DE8B00BBB788 /* ContentView.swift */; };
+		BA51E4112AD8DE8B00BBB788 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4102AD8DE8B00BBB788 /* SignInView.swift */; };
 		BA51E4132AD8DE8C00BBB788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA51E4122AD8DE8C00BBB788 /* Assets.xcassets */; };
 		BA51E4162AD8DE8C00BBB788 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA51E4152AD8DE8C00BBB788 /* Preview Assets.xcassets */; };
+		BA51E41D2AD90F5A00BBB788 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E41C2AD90F5A00BBB788 /* RegisterView.swift */; };
+		BA51E41F2AD913DA00BBB788 /* RegisterBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E41E2AD913DA00BBB788 /* RegisterBaby.swift */; };
+		BA51E4212AD922F100BBB788 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4202AD922F100BBB788 /* ScreenView.swift */; };
+		BA51E4232AD9243600BBB788 /* PerfilMomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4222AD9243600BBB788 /* PerfilMomView.swift */; };
+		BA51E4262AD9268200BBB788 /* MomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4252AD9268200BBB788 /* MomData.swift */; };
+		BA64F0792AE2F756001E9462 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64F0782AE2F756001E9462 /* AddTaskView.swift */; };
+		BAA3C80C2AE1A752001F617E /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C80B2AE1A752001F617E /* ToolbarView.swift */; };
+		BAA3C80E2AE1A8E8001F617E /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C80D2AE1A8E8001F617E /* Tab.swift */; };
+		BAA3C8102AE1E7E1001F617E /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C80F2AE1E7E1001F617E /* MainPage.swift */; };
+		BAA3C8122AE1EF20001F617E /* LabelBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C8112AE1EF20001F617E /* LabelBaby.swift */; };
+		BAA3C8142AE1EF51001F617E /* BabyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C8132AE1EF51001F617E /* BabyData.swift */; };
+		BAA3C8162AE2551C001F617E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C8152AE2551C001F617E /* Task.swift */; };
+		BAA3C8192AE2554C001F617E /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C8182AE2554C001F617E /* TaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA01FCFE2AEB8CED00E0C2C6 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		BA51E40B2AD8DE8B00BBB788 /* Muun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA51E40E2AD8DE8B00BBB788 /* MuunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuunApp.swift; sourceTree = "<group>"; };
-		BA51E4102AD8DE8B00BBB788 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BA51E4102AD8DE8B00BBB788 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		BA51E4122AD8DE8C00BBB788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA51E4152AD8DE8C00BBB788 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BA51E41C2AD90F5A00BBB788 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		BA51E41E2AD913DA00BBB788 /* RegisterBaby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBaby.swift; sourceTree = "<group>"; };
+		BA51E4202AD922F100BBB788 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
+		BA51E4222AD9243600BBB788 /* PerfilMomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilMomView.swift; sourceTree = "<group>"; };
+		BA51E4252AD9268200BBB788 /* MomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomData.swift; sourceTree = "<group>"; };
+		BA64F0782AE2F756001E9462 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		BAA3C80B2AE1A752001F617E /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		BAA3C80D2AE1A8E8001F617E /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		BAA3C80F2AE1E7E1001F617E /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		BAA3C8112AE1EF20001F617E /* LabelBaby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelBaby.swift; sourceTree = "<group>"; };
+		BAA3C8132AE1EF51001F617E /* BabyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyData.swift; sourceTree = "<group>"; };
+		BAA3C8152AE2551C001F617E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		BAA3C8182AE2554C001F617E /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +80,17 @@
 			isa = PBXGroup;
 			children = (
 				BA51E40E2AD8DE8B00BBB788 /* MuunApp.swift */,
-				BA51E4102AD8DE8B00BBB788 /* ContentView.swift */,
+				BAA3C80A2AE1A714001F617E /* ToolBar */,
+				BAA3C8092AE1A709001F617E /* MainPage */,
+				BA51E4102AD8DE8B00BBB788 /* SignInView.swift */,
+				BA51E41C2AD90F5A00BBB788 /* RegisterView.swift */,
+				BA51E41E2AD913DA00BBB788 /* RegisterBaby.swift */,
+				BA01FCFE2AEB8CED00E0C2C6 /* ChatView.swift */,
+				BA51E4222AD9243600BBB788 /* PerfilMomView.swift */,
+				BA51E4202AD922F100BBB788 /* ScreenView.swift */,
+				BAA3C8172AE25534001F617E /* ViewsModel */,
 				BA51E4122AD8DE8C00BBB788 /* Assets.xcassets */,
+				BA51E4242AD9266D00BBB788 /* Data */,
 				BA51E4142AD8DE8C00BBB788 /* Preview Content */,
 			);
 			path = Muun;
@@ -65,6 +102,43 @@
 				BA51E4152AD8DE8C00BBB788 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BA51E4242AD9266D00BBB788 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA51E4252AD9268200BBB788 /* MomData.swift */,
+				BAA3C8132AE1EF51001F617E /* BabyData.swift */,
+				BAA3C8152AE2551C001F617E /* Task.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BAA3C8092AE1A709001F617E /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				BAA3C80F2AE1E7E1001F617E /* MainPage.swift */,
+				BAA3C8112AE1EF20001F617E /* LabelBaby.swift */,
+				BA64F0782AE2F756001E9462 /* AddTaskView.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		BAA3C80A2AE1A714001F617E /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				BAA3C80B2AE1A752001F617E /* ToolbarView.swift */,
+				BAA3C80D2AE1A8E8001F617E /* Tab.swift */,
+			);
+			path = ToolBar;
+			sourceTree = "<group>";
+		};
+		BAA3C8172AE25534001F617E /* ViewsModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAA3C8182AE2554C001F617E /* TaskViewModel.swift */,
+			);
+			path = ViewsModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +211,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA51E4112AD8DE8B00BBB788 /* ContentView.swift in Sources */,
+				BA51E4232AD9243600BBB788 /* PerfilMomView.swift in Sources */,
+				BAA3C8192AE2554C001F617E /* TaskViewModel.swift in Sources */,
+				BA51E41F2AD913DA00BBB788 /* RegisterBaby.swift in Sources */,
+				BAA3C8122AE1EF20001F617E /* LabelBaby.swift in Sources */,
+				BA01FCFF2AEB8CED00E0C2C6 /* ChatView.swift in Sources */,
+				BAA3C80C2AE1A752001F617E /* ToolbarView.swift in Sources */,
+				BA51E41D2AD90F5A00BBB788 /* RegisterView.swift in Sources */,
+				BA64F0792AE2F756001E9462 /* AddTaskView.swift in Sources */,
+				BAA3C8102AE1E7E1001F617E /* MainPage.swift in Sources */,
+				BA51E4112AD8DE8B00BBB788 /* SignInView.swift in Sources */,
+				BAA3C8142AE1EF51001F617E /* BabyData.swift in Sources */,
+				BAA3C8162AE2551C001F617E /* Task.swift in Sources */,
 				BA51E40F2AD8DE8B00BBB788 /* MuunApp.swift in Sources */,
+				BAA3C80E2AE1A8E8001F617E /* Tab.swift in Sources */,
+				BA51E4212AD922F100BBB788 /* ScreenView.swift in Sources */,
+				BA51E4262AD9268200BBB788 /* MomData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
