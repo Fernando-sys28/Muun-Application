@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct SignInView: View {
+    @Environment(ViewModel.self) var viewModel
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isPasswordVisible: Bool = false
+    @State private var navigateToToolbar = false
+    @State private var mom: MomData?
+    @State private var showAlert = false
+    @State private var alertMessage: String = ""
     
     var body: some View {
         NavigationView{
@@ -74,7 +79,17 @@ struct SignInView: View {
                         .padding(.bottom,10)
                         
                         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
-                            NavigationLink(destination: ToolbarView()){
+                            Button(action: {
+                                let result = viewModel.getMomByUsernameAndPassword(username: username, password: password)
+                                switch result {
+                                case .success(let fetchedMom):
+                                    self.mom = fetchedMom
+                                    navigateToToolbar = true
+                                case .failure(let error):
+                                    alertMessage = error.localizedDescription
+                                    showAlert = true
+                                }
+                            }) {
                                 Text("Log In")
                                     .font(.title2)
                                     .fontWeight(.bold)
@@ -87,9 +102,15 @@ struct SignInView: View {
                                     .shadow(radius: 1.5)
                             }
                             .padding(.horizontal)
+                            .alert(isPresented: $showAlert, content: {
+                                Alert(title: Text("Error"), message: Text(alertMessage))
+                            })
+                            NavigationLink(destination: ToolbarView(mom: $mom), isActive: $navigateToToolbar) {
+                                EmptyView()
+                            }
                             
                             Button(action: {
-                                
+                                viewModel.deleteAllMoms()
                             }) {
                                 Text("¿Olvido contraseña?")
                                     .font(.subheadline)
@@ -168,7 +189,7 @@ struct SignInView: View {
 
 
 #Preview {
-    SignInView()
+    SignInView().environmentObject(ViewModel())
 }
 
 struct Vector: Shape {

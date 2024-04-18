@@ -6,18 +6,25 @@
 //
 
 import Foundation
+import SwiftData
 
-
-struct BabyData{
+@Model
+class BabyData{
     var name: String
-    var momName: String
-    var profileImageName: String
+    var lastname: String
+    var gender:String
+    var profileImageBaby: String
     var birthday: Date
-}
-
-
-extension BabyData {
-    static var Babies: [BabyData] = [
-        .init(name: "Sofia", momName: "Karen", profileImageName: "ImageBaby",  birthday: DateComponents(calendar: .current, year: 2022, month: 10, day: 21).date!)
-    ]
+    var peso: Float
+    var altura: Float
+    
+    init(name: String, lastname: String, gender: String, profileImageBaby: String, birthday: Date, peso: Float, altura: Float) {
+        self.name = name
+        self.lastname = lastname
+        self.gender = gender
+        self.profileImageBaby = profileImageBaby
+        self.birthday = birthday
+        self.peso = peso
+        self.altura = altura
+    }
 }

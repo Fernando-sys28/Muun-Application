@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct MuunApp: App {
     var body: some Scene {
         WindowGroup {
-            SignInView()
+            ContentView()
+                .environmentObject(ViewModel())
         }
     }
 }

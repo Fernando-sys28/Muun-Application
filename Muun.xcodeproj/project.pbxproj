@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BA01FCFF2AEB8CED00E0C2C6 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA01FCFE2AEB8CED00E0C2C6 /* ChatView.swift */; };
+		BA30B7B42AFFDE2E00CE8F94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA30B7B32AFFDE2E00CE8F94 /* ContentView.swift */; };
+		BA30B7B62AFFDE4000CE8F94 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA30B7B52AFFDE4000CE8F94 /* SplashScreen.swift */; };
+		BA30B7B82AFFDEAC00CE8F94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA30B7B72AFFDEAC00CE8F94 /* Assets.xcassets */; };
+		BA3F53BF2B2B784700412D6A /* RealityKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3F53BE2B2B784700412D6A /* RealityKitView.swift */; };
 		BA51E40F2AD8DE8B00BBB788 /* MuunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E40E2AD8DE8B00BBB788 /* MuunApp.swift */; };
 		BA51E4112AD8DE8B00BBB788 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4102AD8DE8B00BBB788 /* SignInView.swift */; };
-		BA51E4132AD8DE8C00BBB788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA51E4122AD8DE8C00BBB788 /* Assets.xcassets */; };
 		BA51E4162AD8DE8C00BBB788 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA51E4152AD8DE8C00BBB788 /* Preview Assets.xcassets */; };
 		BA51E41D2AD90F5A00BBB788 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E41C2AD90F5A00BBB788 /* RegisterView.swift */; };
 		BA51E41F2AD913DA00BBB788 /* RegisterBaby.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E41E2AD913DA00BBB788 /* RegisterBaby.swift */; };
-		BA51E4212AD922F100BBB788 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4202AD922F100BBB788 /* ScreenView.swift */; };
 		BA51E4232AD9243600BBB788 /* PerfilMomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4222AD9243600BBB788 /* PerfilMomView.swift */; };
 		BA51E4262AD9268200BBB788 /* MomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA51E4252AD9268200BBB788 /* MomData.swift */; };
 		BA64F0792AE2F756001E9462 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA64F0782AE2F756001E9462 /* AddTaskView.swift */; };
@@ -25,18 +27,44 @@
 		BAA3C8142AE1EF51001F617E /* BabyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C8132AE1EF51001F617E /* BabyData.swift */; };
 		BAA3C8162AE2551C001F617E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C8152AE2551C001F617E /* Task.swift */; };
 		BAA3C8192AE2554C001F617E /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3C8182AE2554C001F617E /* TaskViewModel.swift */; };
+		BAE79C992B1283C900DBA12C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79C982B1283C900DBA12C /* ViewModel.swift */; };
+		BAE79C9B2B14591E00DBA12C /* PoopClasificador.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79C9A2B14591E00DBA12C /* PoopClasificador.swift */; };
+		BAE79C9D2B14594200DBA12C /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79C9C2B14594200DBA12C /* ImageClassifier.swift */; };
+		BAE79CA12B14598700DBA12C /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CA02B14598700DBA12C /* Classifier.swift */; };
+		BAE79CA32B1459AB00DBA12C /* poopModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CA22B1459AB00DBA12C /* poopModel.mlmodel */; };
+		BAE79CA52B1459B800DBA12C /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CA42B1459B800DBA12C /* MobileNetV2.mlmodel */; };
+		BAE79CA72B1459DF00DBA12C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CA62B1459DF00DBA12C /* ImagePicker.swift */; };
+		BAE79CAA2B145C1C00DBA12C /* TrackerCrecimiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CA92B145C1C00DBA12C /* TrackerCrecimiento.swift */; };
+		BAE79CAC2B145C8400DBA12C /* TrackerSintomas.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CAB2B145C8400DBA12C /* TrackerSintomas.swift */; };
+		BAE79CAE2B145F2F00DBA12C /* MedicamentosTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CAD2B145F2F00DBA12C /* MedicamentosTracker.swift */; };
+		BAE79CB02B145F4C00DBA12C /* TrackerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CAF2B145F4C00DBA12C /* TrackerData.swift */; };
+		BAE79CB22B145FC900DBA12C /* MedicamentosTracker_Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CB12B145FC900DBA12C /* MedicamentosTracker_Card.swift */; };
+		BAE79CB42B14607200DBA12C /* RegistrarMed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CB32B14607200DBA12C /* RegistrarMed.swift */; };
+		BAE79CB62B14623900DBA12C /* PañalTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CB52B14623900DBA12C /* PañalTracker.swift */; };
+		BAE79CB92B14638600DBA12C /* libreriaArticulos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CB82B14638600DBA12C /* libreriaArticulos.swift */; };
+		BAE79CBB2B14641400DBA12C /* StatsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CBA2B14641400DBA12C /* StatsMainView.swift */; };
+		BAE79CBE2B1469E800DBA12C /* Insignias.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CBD2B1469E800DBA12C /* Insignias.swift */; };
+		BAE79CC12B15A43D00DBA12C /* articulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE79CC02B15A43D00DBA12C /* articulo.swift */; };
+		BAE79CC32B15AD7400DBA12C /* enfermera123LOW.usdz in Resources */ = {isa = PBXBuildFile; fileRef = BAE79CC22B15AD7400DBA12C /* enfermera123LOW.usdz */; };
+		BAE79CC62B15AE1900DBA12C /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = BAE79CC52B15AE1900DBA12C /* FocusEntity */; };
+		BAF95F982B0FDFD200C3C808 /* TrackerAlimentacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF95F972B0FDFD200C3C808 /* TrackerAlimentacion.swift */; };
+		BAF95F9A2B0FDFD500C3C808 /* CardTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF95F992B0FDFD400C3C808 /* CardTracker.swift */; };
+		BAF95F9C2B0FDFD600C3C808 /* Prueba_DormirTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF95F9B2B0FDFD600C3C808 /* Prueba_DormirTracker.swift */; };
+		BAF95F9E2B0FDFD800C3C808 /* TrackerDormir.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF95F9D2B0FDFD800C3C808 /* TrackerDormir.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BA01FCFE2AEB8CED00E0C2C6 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		BA30B7B32AFFDE2E00CE8F94 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Muun/ContentView.swift; sourceTree = "<group>"; };
+		BA30B7B52AFFDE4000CE8F94 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashScreen.swift; path = Muun/SplashScreen.swift; sourceTree = "<group>"; };
+		BA30B7B72AFFDEAC00CE8F94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA3F53BE2B2B784700412D6A /* RealityKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitView.swift; sourceTree = "<group>"; };
 		BA51E40B2AD8DE8B00BBB788 /* Muun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA51E40E2AD8DE8B00BBB788 /* MuunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuunApp.swift; sourceTree = "<group>"; };
 		BA51E4102AD8DE8B00BBB788 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; usesTabs = 0; };
-		BA51E4122AD8DE8C00BBB788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA51E4152AD8DE8C00BBB788 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA51E41C2AD90F5A00BBB788 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		BA51E41E2AD913DA00BBB788 /* RegisterBaby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBaby.swift; sourceTree = "<group>"; };
-		BA51E4202AD922F100BBB788 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
 		BA51E4222AD9243600BBB788 /* PerfilMomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilMomView.swift; sourceTree = "<group>"; };
 		BA51E4252AD9268200BBB788 /* MomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomData.swift; sourceTree = "<group>"; };
 		BA64F0782AE2F756001E9462 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
@@ -47,6 +75,30 @@
 		BAA3C8132AE1EF51001F617E /* BabyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyData.swift; sourceTree = "<group>"; };
 		BAA3C8152AE2551C001F617E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		BAA3C8182AE2554C001F617E /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		BAE79C982B1283C900DBA12C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		BAE79C9A2B14591E00DBA12C /* PoopClasificador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoopClasificador.swift; sourceTree = "<group>"; };
+		BAE79C9C2B14594200DBA12C /* ImageClassifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
+		BAE79CA02B14598700DBA12C /* Classifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		BAE79CA22B1459AB00DBA12C /* poopModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = poopModel.mlmodel; sourceTree = "<group>"; };
+		BAE79CA42B1459B800DBA12C /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
+		BAE79CA62B1459DF00DBA12C /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		BAE79CA92B145C1C00DBA12C /* TrackerCrecimiento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCrecimiento.swift; sourceTree = "<group>"; };
+		BAE79CAB2B145C8400DBA12C /* TrackerSintomas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerSintomas.swift; sourceTree = "<group>"; };
+		BAE79CAD2B145F2F00DBA12C /* MedicamentosTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentosTracker.swift; sourceTree = "<group>"; };
+		BAE79CAF2B145F4C00DBA12C /* TrackerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerData.swift; sourceTree = "<group>"; };
+		BAE79CB12B145FC900DBA12C /* MedicamentosTracker_Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicamentosTracker_Card.swift; sourceTree = "<group>"; };
+		BAE79CB32B14607200DBA12C /* RegistrarMed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrarMed.swift; sourceTree = "<group>"; };
+		BAE79CB52B14623900DBA12C /* PañalTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PañalTracker.swift"; sourceTree = "<group>"; };
+		BAE79CB82B14638600DBA12C /* libreriaArticulos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = libreriaArticulos.swift; sourceTree = "<group>"; };
+		BAE79CBA2B14641400DBA12C /* StatsMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsMainView.swift; sourceTree = "<group>"; };
+		BAE79CBD2B1469E800DBA12C /* Insignias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insignias.swift; sourceTree = "<group>"; };
+		BAE79CBF2B14740200DBA12C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BAE79CC02B15A43D00DBA12C /* articulo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = articulo.swift; sourceTree = "<group>"; };
+		BAE79CC22B15AD7400DBA12C /* enfermera123LOW.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = enfermera123LOW.usdz; sourceTree = "<group>"; };
+		BAF95F972B0FDFD200C3C808 /* TrackerAlimentacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerAlimentacion.swift; sourceTree = "<group>"; };
+		BAF95F992B0FDFD400C3C808 /* CardTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTracker.swift; sourceTree = "<group>"; };
+		BAF95F9B2B0FDFD600C3C808 /* Prueba_DormirTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prueba_DormirTracker.swift; sourceTree = "<group>"; };
+		BAF95F9D2B0FDFD800C3C808 /* TrackerDormir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerDormir.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE79CC62B15AE1900DBA12C /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +116,8 @@
 		BA51E4022AD8DE8B00BBB788 = {
 			isa = PBXGroup;
 			children = (
+				BA30B7B52AFFDE4000CE8F94 /* SplashScreen.swift */,
+				BA30B7B32AFFDE2E00CE8F94 /* ContentView.swift */,
 				BA51E40D2AD8DE8B00BBB788 /* Muun */,
 				BA51E40C2AD8DE8B00BBB788 /* Products */,
 			);
@@ -79,17 +134,24 @@
 		BA51E40D2AD8DE8B00BBB788 /* Muun */ = {
 			isa = PBXGroup;
 			children = (
+				BAE79CBF2B14740200DBA12C /* Info.plist */,
+				BAE79CC22B15AD7400DBA12C /* enfermera123LOW.usdz */,
 				BA51E40E2AD8DE8B00BBB788 /* MuunApp.swift */,
-				BAA3C80A2AE1A714001F617E /* ToolBar */,
-				BAA3C8092AE1A709001F617E /* MainPage */,
 				BA51E4102AD8DE8B00BBB788 /* SignInView.swift */,
 				BA51E41C2AD90F5A00BBB788 /* RegisterView.swift */,
+				BAE79CB72B14627000DBA12C /* Classifier */,
+				BAA3C80A2AE1A714001F617E /* ToolBar */,
+				BAA3C8092AE1A709001F617E /* MainPage */,
+				BAE79CA82B145B5E00DBA12C /* Tracker */,
+				BAE79CBC2B14641D00DBA12C /* Stats */,
+				BAE79CBD2B1469E800DBA12C /* Insignias.swift */,
+				BAE79CB82B14638600DBA12C /* libreriaArticulos.swift */,
+				BAE79CC02B15A43D00DBA12C /* articulo.swift */,
 				BA51E41E2AD913DA00BBB788 /* RegisterBaby.swift */,
+				BA3F53BE2B2B784700412D6A /* RealityKitView.swift */,
 				BA01FCFE2AEB8CED00E0C2C6 /* ChatView.swift */,
 				BA51E4222AD9243600BBB788 /* PerfilMomView.swift */,
-				BA51E4202AD922F100BBB788 /* ScreenView.swift */,
 				BAA3C8172AE25534001F617E /* ViewsModel */,
-				BA51E4122AD8DE8C00BBB788 /* Assets.xcassets */,
 				BA51E4242AD9266D00BBB788 /* Data */,
 				BA51E4142AD8DE8C00BBB788 /* Preview Content */,
 			);
@@ -109,6 +171,7 @@
 			children = (
 				BA51E4252AD9268200BBB788 /* MomData.swift */,
 				BAA3C8132AE1EF51001F617E /* BabyData.swift */,
+				BAE79CAF2B145F4C00DBA12C /* TrackerData.swift */,
 				BAA3C8152AE2551C001F617E /* Task.swift */,
 			);
 			path = Data;
@@ -137,8 +200,48 @@
 			isa = PBXGroup;
 			children = (
 				BAA3C8182AE2554C001F617E /* TaskViewModel.swift */,
+				BA30B7B72AFFDEAC00CE8F94 /* Assets.xcassets */,
+				BAE79C982B1283C900DBA12C /* ViewModel.swift */,
 			);
 			path = ViewsModel;
+			sourceTree = "<group>";
+		};
+		BAE79CA82B145B5E00DBA12C /* Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				BAE79CAB2B145C8400DBA12C /* TrackerSintomas.swift */,
+				BAF95F972B0FDFD200C3C808 /* TrackerAlimentacion.swift */,
+				BAE79CA92B145C1C00DBA12C /* TrackerCrecimiento.swift */,
+				BAF95F9D2B0FDFD800C3C808 /* TrackerDormir.swift */,
+				BAE79CB52B14623900DBA12C /* PañalTracker.swift */,
+				BAF95F9B2B0FDFD600C3C808 /* Prueba_DormirTracker.swift */,
+				BAE79CB12B145FC900DBA12C /* MedicamentosTracker_Card.swift */,
+				BAE79CAD2B145F2F00DBA12C /* MedicamentosTracker.swift */,
+				BAE79CB32B14607200DBA12C /* RegistrarMed.swift */,
+				BAF95F992B0FDFD400C3C808 /* CardTracker.swift */,
+			);
+			path = Tracker;
+			sourceTree = "<group>";
+		};
+		BAE79CB72B14627000DBA12C /* Classifier */ = {
+			isa = PBXGroup;
+			children = (
+				BAE79CA02B14598700DBA12C /* Classifier.swift */,
+				BAE79CA42B1459B800DBA12C /* MobileNetV2.mlmodel */,
+				BAE79CA62B1459DF00DBA12C /* ImagePicker.swift */,
+				BAE79C9A2B14591E00DBA12C /* PoopClasificador.swift */,
+				BAE79CA22B1459AB00DBA12C /* poopModel.mlmodel */,
+				BAE79C9C2B14594200DBA12C /* ImageClassifier.swift */,
+			);
+			path = Classifier;
+			sourceTree = "<group>";
+		};
+		BAE79CBC2B14641D00DBA12C /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				BAE79CBA2B14641400DBA12C /* StatsMainView.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +260,9 @@
 			dependencies = (
 			);
 			name = Muun;
+			packageProductDependencies = (
+				BAE79CC52B15AE1900DBA12C /* FocusEntity */,
+			);
 			productName = Muun;
 			productReference = BA51E40B2AD8DE8B00BBB788 /* Muun.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +291,9 @@
 				Base,
 			);
 			mainGroup = BA51E4022AD8DE8B00BBB788;
+			packageReferences = (
+				BAE79CC42B15AE1900DBA12C /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = BA51E40C2AD8DE8B00BBB788 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,7 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA51E4162AD8DE8C00BBB788 /* Preview Assets.xcassets in Resources */,
-				BA51E4132AD8DE8C00BBB788 /* Assets.xcassets in Resources */,
+				BAE79CC32B15AD7400DBA12C /* enfermera123LOW.usdz in Resources */,
+				BA30B7B82AFFDEAC00CE8F94 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,22 +321,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE79CA12B14598700DBA12C /* Classifier.swift in Sources */,
+				BA30B7B62AFFDE4000CE8F94 /* SplashScreen.swift in Sources */,
 				BA51E4232AD9243600BBB788 /* PerfilMomView.swift in Sources */,
+				BA3F53BF2B2B784700412D6A /* RealityKitView.swift in Sources */,
 				BAA3C8192AE2554C001F617E /* TaskViewModel.swift in Sources */,
+				BAE79CB62B14623900DBA12C /* PañalTracker.swift in Sources */,
+				BAE79C9B2B14591E00DBA12C /* PoopClasificador.swift in Sources */,
+				BAE79CBB2B14641400DBA12C /* StatsMainView.swift in Sources */,
 				BA51E41F2AD913DA00BBB788 /* RegisterBaby.swift in Sources */,
+				BAE79CB42B14607200DBA12C /* RegistrarMed.swift in Sources */,
+				BAE79CAC2B145C8400DBA12C /* TrackerSintomas.swift in Sources */,
 				BAA3C8122AE1EF20001F617E /* LabelBaby.swift in Sources */,
 				BA01FCFF2AEB8CED00E0C2C6 /* ChatView.swift in Sources */,
+				BAF95F9C2B0FDFD600C3C808 /* Prueba_DormirTracker.swift in Sources */,
+				BAE79CAA2B145C1C00DBA12C /* TrackerCrecimiento.swift in Sources */,
+				BAE79CA52B1459B800DBA12C /* MobileNetV2.mlmodel in Sources */,
+				BAE79CB92B14638600DBA12C /* libreriaArticulos.swift in Sources */,
+				BAF95F9E2B0FDFD800C3C808 /* TrackerDormir.swift in Sources */,
 				BAA3C80C2AE1A752001F617E /* ToolbarView.swift in Sources */,
 				BA51E41D2AD90F5A00BBB788 /* RegisterView.swift in Sources */,
+				BA30B7B42AFFDE2E00CE8F94 /* ContentView.swift in Sources */,
+				BAE79CAE2B145F2F00DBA12C /* MedicamentosTracker.swift in Sources */,
 				BA64F0792AE2F756001E9462 /* AddTaskView.swift in Sources */,
+				BAE79CB02B145F4C00DBA12C /* TrackerData.swift in Sources */,
 				BAA3C8102AE1E7E1001F617E /* MainPage.swift in Sources */,
 				BA51E4112AD8DE8B00BBB788 /* SignInView.swift in Sources */,
+				BAE79CBE2B1469E800DBA12C /* Insignias.swift in Sources */,
+				BAE79CA72B1459DF00DBA12C /* ImagePicker.swift in Sources */,
+				BAE79C992B1283C900DBA12C /* ViewModel.swift in Sources */,
+				BAE79C9D2B14594200DBA12C /* ImageClassifier.swift in Sources */,
 				BAA3C8142AE1EF51001F617E /* BabyData.swift in Sources */,
+				BAE79CC12B15A43D00DBA12C /* articulo.swift in Sources */,
 				BAA3C8162AE2551C001F617E /* Task.swift in Sources */,
 				BA51E40F2AD8DE8B00BBB788 /* MuunApp.swift in Sources */,
 				BAA3C80E2AE1A8E8001F617E /* Tab.swift in Sources */,
-				BA51E4212AD922F100BBB788 /* ScreenView.swift in Sources */,
+				BAE79CA32B1459AB00DBA12C /* poopModel.mlmodel in Sources */,
+				BAF95F982B0FDFD200C3C808 /* TrackerAlimentacion.swift in Sources */,
+				BAF95F9A2B0FDFD500C3C808 /* CardTracker.swift in Sources */,
 				BA51E4262AD9268200BBB788 /* MomData.swift in Sources */,
+				BAE79CB22B145FC900DBA12C /* MedicamentosTracker_Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +497,8 @@
 				DEVELOPMENT_TEAM = 8W787W3FG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Muun/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se usara para clasificar y la realidad aumentada";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -392,6 +528,8 @@
 				DEVELOPMENT_TEAM = 8W787W3FG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Muun/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Se usara para clasificar y la realidad aumentada";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,6 +570,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAE79CC42B15AE1900DBA12C /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAE79CC52B15AE1900DBA12C /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAE79CC42B15AE1900DBA12C /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA51E4032AD8DE8B00BBB788 /* Project object */;
 }

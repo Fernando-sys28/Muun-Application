@@ -17,7 +17,7 @@ struct LabelBaby: View {
                     .frame(width: 100,height: 110)
                     .foregroundColor(Color("ColorVerde"))
                     .offset(y:8)
-                Image(baby.profileImageName)
+                Image(baby.profileImageBaby)
                     .resizable()
                     .frame(width: 90,height: 90)
                     .clipShape(Circle())
@@ -70,8 +70,9 @@ struct LabelBaby: View {
     }
 }
 
-struct LabelBaby_Previews: PreviewProvider {
+/*struct LabelBaby_Previews: PreviewProvider {
     static var previews: some View {
         LabelBaby(baby:BabyData.Babies[0])
     }
-}
+}*/
+

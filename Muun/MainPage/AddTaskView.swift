@@ -95,10 +95,9 @@ struct AddTaskView: View {
     }
 }
 
-#if DEBUG
 struct AddTaskView_Previews: PreviewProvider {
     static var previews: some View {
         AddTaskView()
     }
 }
-#endif
+

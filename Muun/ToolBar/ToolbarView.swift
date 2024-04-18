@@ -8,25 +8,27 @@ import SwiftUI
 
 struct ToolbarView: View {
     @State private var activeTab: Tab = .home
+    @Environment(ViewModel.self) var viewModel
+    @Binding var mom: MomData?
     
     var body: some View {
         NavigationView{
             VStack(spacing: 0){
                 TabView(selection: $activeTab){
                     
-                    MainPage(calendar: Calendar(identifier: .gregorian))
+                    MainPage(calendar: Calendar(identifier: .gregorian),mom:$mom)
                         .tag(Tab.home)
                         .toolbar(.hidden, for: .tabBar)
-                    Normal()
+                    CardTracker(mom: $mom)
                         .tag(Tab.tracker)
                         .toolbar(.hidden, for: .tabBar)
                     ChatView()
                         .tag(Tab.Luna)
                         .toolbar(.hidden, for: .tabBar)
-                    Normal()
+                    StatsMainView()
                         .tag(Tab.statistics)
                         .toolbar(.hidden, for: .tabBar)
-                    PerfilMomView(mom:MomData.moms[0])
+                    PerfilMomView(mom:$mom)
                         .tag(Tab.perfil)
                         .toolbar(.hidden, for: .tabBar)
                 }
@@ -100,11 +102,11 @@ struct TabItem: View {
     }
 }
 
-struct ToolbarView_Previews: PreviewProvider {
+/*struct ToolbarView_Previews: PreviewProvider {
     static var previews: some View {
         ToolbarView()
     }
-}
+}*/
 
 struct Normal: View {
     var body: some View {
@@ -114,3 +116,4 @@ struct Normal: View {
         
     }
 }
+

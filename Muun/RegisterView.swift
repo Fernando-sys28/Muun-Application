@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @Environment(ViewModel.self) var viewModel
+    @State private var momId: UUID?
+    
+    
     @State private var username: String = ""
     @State private var name: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isPasswordVisible: Bool = false
+    @State private var showAlert = false
+    @State private var alertMessage: String = ""
+    @State private var NavigateToRegisterBaby = false
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -42,6 +50,7 @@ struct RegisterView: View {
                         TextField("Nombre", text: $name)
                             .padding(.horizontal, 10)
                             .padding(.vertical, 5)
+                            .padding(.bottom,10)
                             .overlay(
                                 Divider()
                                     
@@ -95,7 +104,18 @@ struct RegisterView: View {
                         
                         VStack(alignment: .center, spacing: 20){
                             Button(action: {
-                                // Acción del botón de inicio de sesión
+                                let result = viewModel.createMom(name: name, username: username, password: password, CorreoUser: email, profileImageName: "ImageMom")
+                                
+                                switch result {
+                                case .success(let newMomId):
+                                    self.NavigateToRegisterBaby = true
+                                    print(NavigateToRegisterBaby)
+                                    self.momId = newMomId
+                                case .failure(let error):
+                                    // Handle the error
+                                    alertMessage = error.localizedDescription
+                                    showAlert = true
+                                }
                             }) {
                                 Text("Sign Up")
                                     .font(.title2)
@@ -109,8 +129,12 @@ struct RegisterView: View {
                                     .shadow(radius: 1.5)
                             }
                             .padding(.horizontal)
-                            
-                            
+                            .alert(isPresented: $showAlert, content: {
+                                    Alert(title: Text("Error"), message: Text(alertMessage))
+                                  })
+                            NavigationLink(destination: RegisterBaby(momId: $momId), isActive: $NavigateToRegisterBaby) {
+                                EmptyView()
+                            }
                             Text("O registrate con")
                                 .font(.caption)
                                 .foregroundColor(.gray)
@@ -181,6 +205,8 @@ struct RegisterView: View {
         .navigationBarHidden(true)
         
     }
+    
+    
 }
 
 #Preview {

@@ -27,6 +27,19 @@ class TaskViewModel: ObservableObject {
     @Published var selectedTaskType: TaskType? = nil
     // MARK: - Initializing
     init() {
+        let calendar = Calendar.current
+
+        if let yesterday = calendar.date(byAdding: .day, value: -1, to: currentDay),
+           let dayAfterTomorrow = calendar.date(byAdding: .day, value: 2, to: currentDay) {
+            
+            // Task for yesterday
+            let yesterdayTask = Task(title: "VitaminaB", description: "Tomar 8 horas", doneFlag: false, date: yesterday, type: .medicamentos(detail: Medicamentos(nombre: "Medicamento B", dosis: "1 tableta")))
+            
+            // Task for the day after tomorrow
+            let dayAfterTomorrowTask = Task(title: "Pediatra", description: "", doneFlag: false, date: dayAfterTomorrow, type: .citasMedicas(detail: CitasMedicas(especialidad: "General", motivo: "Routine Checkup")))
+            
+            storedTasks.append(contentsOf: [yesterdayTask, dayAfterTomorrowTask])
+        }
         filterTodayTasks()
     }
     

@@ -8,173 +8,204 @@
 import SwiftUI
 
 struct PerfilMomView: View {
-    let mom: MomData
+    @Binding var mom: MomData?
+    @Environment(ViewModel.self) var viewModel
     var body: some View {
-        ZStack{
-            BackGroundMom()
-            VStack{
-                ZStack{
-                    Circle()
-                        .frame(width: 160,height: 160)
-                        .foregroundColor(.white)
-                        .offset(y:8)
-                    Image("ImageMom")
-                        .resizable()
-                        .frame(width: 150,height: 150)
-                        .clipShape(Circle())
-                        .aspectRatio(contentMode: .fill)
-                        .padding(.top)
-                }
-                
-                Text(mom.name)
-                    .font(.title)
-                
-                Button(action: {
-                }) {
-                    Text("Agragar bebe +")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                        .frame(width: 200)
-                        .background(Color("verdoso"))
-                        .cornerRadius(60)
-                        .shadow(color:Color("verdoso"),radius: 1.5)
-                }
-                .padding(.bottom,20)
-                
-                VStack(alignment: .leading, spacing: 15){
-                    Text(mom.baby.name)
-                        .font(
-                            .title2
-                        )
-                        .fontWeight(.semibold)
-                        .padding(.leading,20)
-                    
-                    Text("5 semanas,1 dia")
-                        .font(.caption2)
-                        .fontWeight(.light)
-                        .foregroundColor(.gray)
-                        .padding(.leading,20)
-                        .padding(.top,-10)
-                    NavigationLink(
-                        destination: Text("Agregar cuidador"),
-                        label: {
-                            HStack{
-                                Text("Agregar cuidador")
-                                    .font(.subheadline)
-                                    .foregroundColor(.black)
-                                    .padding(.horizontal,20)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.black)
-                                    .padding(.leading,125)
-                            }
-                        })
-                    
-                    NavigationLink(
-                        destination: Text("Informe para un médico"),
-                        label: {
-                            HStack{
-                                Text("Informe para un médico")
-                                    .font(.subheadline)
-                                    .foregroundColor(.black)
-                                    .padding(.horizontal,20)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.black)
-                                    .padding(.leading,80)
-                                    
-                            }
-
-                        })
-                    .padding(.bottom,15)
-                    Button(action: {
-                        print("Editar información")
-                    }, label: {
-                        Text("Editar información")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .padding(.vertical,5)
+        NavigationView {
+            ZStack{
+                BackGroundMom()
+                VStack{
+                    if let mom = mom {
+                        ZStack{
+                            Circle()
+                                .frame(width: 160,height: 160)
+                                .foregroundColor(.white)
+                                .offset(y:8)
+                            Image(mom.profileImageName ?? "ImageBaby")
+                                .resizable()
+                                .frame(width: 150,height: 150)
+                                .clipShape(Circle())
+                                .aspectRatio(contentMode: .fill)
+                                .padding(.top)
+                        }
+                        Text(mom.name) // Aquí baby ya no es opcional
+                            .font(.title)
                         
-                    })
-                    .frame(width: 170)
-                    .background(Color("verdoso"))
-                    .cornerRadius(60)
-                    .padding(.leading,140)
+                        Button(action: {
+                        }) {
+                            Text("Agragar bebe +")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                                .padding()
+                                .frame(width: 220)
+                                .background(Color("verdoso"))
+                                .cornerRadius(60)
+                                .shadow(color:Color("verdoso"),radius: 1.5)
+                        }
+                        .padding(.bottom,20)
+                        
+                        VStack(alignment: .leading, spacing: 15){
+                            
+                            if let baby = mom.baby {
+                                Text(baby.name) // Ahora baby.name es seguro de acceder
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                    .padding(.leading,20)
+                                let difference = baby.birthday.differenceInMonthsAndWeeks(to: Date())
+                                if difference.weeks > 0 {
+                                    Text("\(difference.months) meses, \(difference.weeks) semanas")
+                                        .font(.caption2)
+                                        .fontWeight(.light)
+                                        .foregroundColor(.gray)
+                                        .padding(.leading,20)
+                                        .padding(.top,-10)
+                                } else {
+                                    Text("\(difference.months) meses")
+                                        .font(.caption2)
+                                        .fontWeight(.light)
+                                        .foregroundColor(.gray)
+                                        .padding(.leading,20)
+                                        .padding(.top,-10)
+                                }
+                            } else {
+                                Text("No hay información del bebé")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                    .padding(.leading,20)
+                            }
+                            
+                            NavigationLink(
+                                destination: Text("Agregar cuidador"),
+                                label: {
+                                    HStack{
+                                        Text("Agregar cuidador")
+                                            .font(.subheadline)
+                                            .foregroundColor(.black)
+                                            .padding(.horizontal,20)
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.black)
+                                            .padding(.leading,125)
+                                    }
+                                })
+                            
+                            NavigationLink(
+                                destination: Text("Informe para un médico"),
+                                label: {
+                                    HStack{
+                                        Text("Informe para un médico")
+                                            .font(.subheadline)
+                                            .foregroundColor(.black)
+                                            .padding(.horizontal,20)
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.black)
+                                            .padding(.leading,80)
+                                        
+                                    }
+                                    
+                                })
+                            .padding(.bottom,15)
+                            Button(action: {
+                                print("Editar información")
+                            }, label: {
+                                Text("Editar información")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .padding(.vertical,5)
+                                
+                            })
+                            .frame(width: 170)
+                            .background(Color("verdoso"))
+                            .cornerRadius(60)
+                            .padding(.leading,140)
+                            
+                        }
+                        .frame(width: 350, height: 200)
+                        .background(Color(.white))
+                        .cornerRadius(40)
+                        .shadow(radius: 3)
+                        .padding(.bottom,10)
+                        
+                        
+                        VStack(alignment: .leading){
+                            
+                            NavigationLink(
+                                destination: Insignias(),
+                                label: {
+                                    Image(systemName: "trophy")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                        .foregroundColor(.black)
+                                        .padding(.leading,10)
+                                    Text("Insignias")
+                                        .font(.footnote)
+                                        .foregroundStyle(.black)
+                                        .padding(.trailing,200)
+                                })
+                            NavigationLink(
+                                destination: libreriaArticulos(),
+                                label: {
+                                    
+                                    Image(systemName: "bookmark")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                        .foregroundColor(.black)
+                                        .padding(.leading,10)
+                                    Text("Libreria de Articulos")
+                                        .font(.footnote)
+                                        .foregroundStyle(.black)
+                                    
+                                    
+                                })
+                            Button(action: {
+                            }) {
+                                Image(systemName: "gearshape")
+                                    .resizable()
+                                    .frame(width: 16, height: 16)
+                                    .foregroundColor(.black)
+                                    .padding(.leading,10)
+                                Text("Configuración")
+                                    .font(.footnote)
+                                    .foregroundStyle(.black)
+                            }
+                            Button(action: {
+                            }) {
+                                Image(systemName: "questionmark.circle")
+                                    .resizable()
+                                    .frame(width: 16, height: 16)
+                                    .foregroundColor(.black)
+                                    .padding(.leading,10)
+                                Text("Ayuda y Soporte")
+                                    .font(.footnote)
+                                    .foregroundStyle(.black)
+                            }
+                        }
+                        .frame(width: 350, height: 150)
+                        .background(Color(.white))
+                        .cornerRadius(40)
+                        .shadow(radius: 3)
+                    }  else {
+                        Text("No hay información de la mama")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .padding(.leading,20)
+                    }
+                    
                     
                 }
-                .frame(width: 350, height: 200)
-                .background(Color(.white))
-                .cornerRadius(40)
-                .shadow(radius: 3)
-                .padding(.bottom,10)
-               
-                
-                VStack(alignment: .leading){
-                    Button(action: {
-
-                    }) {
-                        Image(systemName: "trophy")
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .foregroundColor(.black)
-                            .padding(.leading,10)
-                        Text("Insignias")
-                            .font(.footnote)
-                            .foregroundStyle(.black)
-                            .padding(.trailing,200)
-                    }
-                    Button(action: {
-                    }) {
-                        Image(systemName: "bookmark")
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .foregroundColor(.black)
-                            .padding(.leading,10)
-                        Text("Libreria de Articulos")
-                            .font(.footnote)
-                            .foregroundStyle(.black)
-                            
-                    }
-                    Button(action: {
-                    }) {
-                        Image(systemName: "gearshape")
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .foregroundColor(.black)
-                            .padding(.leading,10)
-                        Text("Configuración")
-                            .font(.footnote)
-                            .foregroundStyle(.black)
-                    }
-                    Button(action: {
-                    }) {
-                        Image(systemName: "questionmark.circle")
-                            .resizable()
-                            .frame(width: 16, height: 16)
-                            .foregroundColor(.black)
-                            .padding(.leading,10)
-                        Text("Ayuda y Soporte")
-                            .font(.footnote)
-                            .foregroundStyle(.black)
-                    }
-                }
-                .frame(width: 350, height: 150)
-                .background(Color(.white))
-                .cornerRadius(40)
-                .shadow(radius: 3)
+                .padding(.top,-15)
             }
-            .padding(.top,-15)
-
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
+        .navigationBarHidden(true)
     }
 }
-struct PerfilMomView_Previews: PreviewProvider {
+/*struct PerfilMomView_Previews: PreviewProvider {
     static var previews: some View {
         PerfilMomView(mom:MomData.moms[0])
     }
-}
+}*/
 
 struct VectorMom: Shape {
     func path(in rect: CGRect) -> Path {
@@ -232,3 +263,4 @@ struct BackGroundMom: View {
         }
     }
 }
+

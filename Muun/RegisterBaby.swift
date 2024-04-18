@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct RegisterBaby: View {
+    @Environment(ViewModel.self) var viewModel
     @State private var lastnameBaby: String = ""
     @State private var nameBaby: String = ""
     @State private var genderBaby: String = ""
     @State private var birthdate = Date()
     @State private var isPasswordVisible: Bool = false
+    @State private var alturaBaby: Float = 0.0
+    @State private var pesoBaby: Float = 0.0
+    @State private var alturaString: String = ""
+    @State private var pesoString: String = ""
+    @State private var NavigateToperfilmom = false
+    @State private var showAlert = false
+    @State private var alertMessage: String = ""
+    @Binding var momId: UUID?
+    @State private var mom: MomData?
+    
     var body: some View {
         NavigationView(){
             ZStack{
@@ -84,7 +95,7 @@ struct RegisterBaby: View {
                             .padding(.horizontal, 10)
                             .foregroundColor(/*@START_MENU_TOKEN@*/.gray/*@END_MENU_TOKEN@*/.opacity(0.6))
                         HStack{
-                            TextField("Peso", text: $genderBaby)
+                            TextField("Peso", text: $pesoString)
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 5)
                                 .overlay(
@@ -101,7 +112,7 @@ struct RegisterBaby: View {
                                 .foregroundColor(Color.gray)
                                 .multilineTextAlignment(.leading)
                                 .padding(.horizontal,-5)
-                            TextField("Altura", text: $genderBaby)
+                            TextField("Altura", text: $alturaString)
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 5)
                                 .overlay(
@@ -123,7 +134,28 @@ struct RegisterBaby: View {
                         .padding(.bottom,60)
                         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
                             Button(action: {
+                                alturaBaby = Float(alturaString) ?? 0.0
+                                pesoBaby = Float(pesoString) ?? 0.0
 
+                                if let momId = momId {
+                                    let newBaby = BabyData(name: nameBaby, lastname: lastnameBaby, gender: genderBaby, profileImageBaby: "ImageBaby", birthday: birthdate, peso: pesoBaby, altura: alturaBaby)
+                                    let result = viewModel.addBabyToMom(momId: momId, baby: newBaby)
+                                    switch result {
+                                    case .success(let newMomId):
+                                        self.NavigateToperfilmom = true
+                                        print(NavigateToperfilmom)
+                                        self.momId = newMomId
+                                        let mom = viewModel.getMomById(momId:momId)
+                                        self.mom = mom
+                                    case .failure(let error):
+                                        // Handle the error
+                                        alertMessage = error.localizedDescription
+                                        showAlert = true
+                                    }
+                                } else {
+                                    print("no encontrado mama")
+                                }
+                                
                             }) {
                                 Text("Continuar")
                                     .font(.title2)
@@ -137,7 +169,12 @@ struct RegisterBaby: View {
                                     .shadow(color:Color("verdoso"),radius: 1.5)
                             }
                             .padding(.horizontal)
-
+                            .alert(isPresented: $showAlert, content: {
+                                Alert(title: Text("Error"), message: Text(alertMessage))
+                            })
+                            NavigationLink(destination: ToolbarView(mom: $mom), isActive: $NavigateToperfilmom) {
+                                EmptyView()
+                            }
                         }
                         .padding(.horizontal,25)
                         
@@ -153,16 +190,15 @@ struct RegisterBaby: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: CustomBackButton())
+        
         
     }
 }
-struct RegisterBaby_Previews: PreviewProvider {
+/*struct RegisterBaby_Previews: PreviewProvider {
     static var previews: some View {
         RegisterBaby()
     }
-}
-
+}*/
 struct VectorBaby: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()

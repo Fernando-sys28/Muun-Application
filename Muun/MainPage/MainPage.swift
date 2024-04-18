@@ -8,24 +8,27 @@
 import SwiftUI
 
 struct MainPage: View {
-    
+    @Environment(ViewModel.self) var viewModel
     @StateObject var taskModel: TaskViewModel = TaskViewModel()
-    
+    @GestureState private var dragOffset = CGSize.zero
     private let calendar: Calendar
     private let monthDayFormatter: DateFormatter
     private let dayFormatter: DateFormatter
     private let weekDayFormatter: DateFormatter
     private let timeFormatter: DateFormatter
     private let MonthFormatter: DateFormatter
+    private var mom: Binding<MomData?>
     
     @State private var showFullCalendar: Bool = false
     @State private var isPendientesSelected: Bool = false
     
     @State private var selectedDate = Self.now
-    private static var now = Date() // Cache now
+    private static var now = Date()
     @State private var selectedTaskType: TaskType? = nil
     
-    init(calendar: Calendar) {
+    init(calendar: Calendar, mom: Binding<MomData?>) {
+        
+        self.mom = mom
         self.calendar = calendar
         
         self.monthDayFormatter = DateFormatter(dateFormat: "dd/MM", calendar: calendar, locale: Locale(identifier: "es_MX"))
@@ -35,9 +38,10 @@ struct MainPage: View {
         self.timeFormatter = DateFormatter(dateFormat: "H:mm", calendar: calendar, locale: Locale(identifier: "es_MX"))
         
         self.MonthFormatter = DateFormatter(dateFormat: "MMMM", calendar: calendar, locale: Locale(identifier: "es_MX"))
+
     }
     
-    
+   
     
     var body: some View {
         ZStack{
@@ -46,7 +50,22 @@ struct MainPage: View {
             VStack{
                 
                 ScrollView() {
-                    LabelBaby(baby:BabyData.Babies[0])
+                    if let mom = self.mom.wrappedValue {
+                        if let baby = mom.baby {
+                            LabelBaby(baby: baby)
+                        } else {
+                            Text("No hay información del bebé")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                                .padding(.leading, 20)
+                        }
+                    } else {
+                        Text("No hay información de la mamá")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .padding(.leading, 20)
+                    }
+
                     HStack {
                         HStack(alignment: .center, spacing: 10) {
                             Button(action: {
@@ -236,7 +255,6 @@ struct MainPage: View {
 
             .ignoresSafeArea()
             .padding(.leading,5)
-            // MARK: - Updating Tasks
             .onChange(of: taskModel.currentDay) { oldvalue,newValue in
                 taskModel.filterTodayTasks()
             }
@@ -245,6 +263,7 @@ struct MainPage: View {
     }
 
     func TaskCardView(task: Task) -> some View {
+        
         HStack(spacing: 25) {
             VStack(spacing: 5) {
                 Rectangle()
@@ -263,40 +282,43 @@ struct MainPage: View {
                 Rectangle()
                     .fill(.colorVerde)
                     .frame(width: 3)
+                
             }
             VStack(alignment: .leading, spacing: 20) {
-                HStack{
-                    task.type.image
-                        .resizable()
-                        .frame(width: 31,height: 32)
-                        .padding(.top,-15)
-                        .padding(.leading,30)
-                    VStack{
-                        Text(task.title)
-                            .font(.title2)
-                            .padding(.leading,10)
-                        Text(task.description)
-                            .font(.caption)
-                            .fontWeight(.light)
-                    }
+                Button(action: {
                     
-                    Spacer()
-                }
+                }, label: {
+                    HStack{
+                        task.type.image
+                            .resizable()
+                            .frame(width: 31,height: 32)
+                            .padding(.top,-15)
+                            .padding(.leading,30)
+                        VStack{
+                            Text(task.title)
+                                .font(.title2)
+                                .foregroundColor(Color.black)
+                                .padding(.leading,10)
+                            Text(task.description)
+                                .font(.caption)
+                                .fontWeight(.light)
+                                .foregroundColor(Color.black)
+                        }
+                        Spacer()
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 30.0)
+                            .foregroundStyle(.white)
+                            .frame(width: 260, height: 80)
+                            .shadow(radius: 1.5,x:0.5,y:2)
+                    )
+                })
             }
-
-            .background(
-                RoundedRectangle(cornerRadius: 30.0)
-                    .foregroundStyle(.white)
-                    .frame(width: 260, height: 80)
-                    .shadow(radius: 1.5,x:0.5,y:2)
-            )
         }
-        
         .frame(width: 350, alignment: .leading)
-        .padding(.leading,-40)
-
+        .padding(.leading, -40)
     }
-        
+    
 }
 
 
@@ -525,10 +547,11 @@ private extension DateFormatter {
 }
 // MARK: - Previews
 
-struct CalendarWeekView_Previews: PreviewProvider {
+/*struct CalendarWeekView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             MainPage(calendar: Calendar(identifier: .gregorian))
         }
     }
-}
+}*/
+
